@@ -1,0 +1,72 @@
+<nb-card>
+  <nb-card-header>Formulario Avanzado uso de FormBilder</nb-card-header>
+  <nb-card-body class="form">
+    <form [formGroup]="form" (ngSubmit)="save($event)">
+      <div class="col-md-6">
+        <div formGroupName="fullName">
+          <nb-form-field class="">
+            <label for="name" class="label">Nombre</label>
+            <input type="text"
+                   nbInput
+                   fullWidth
+                   id="name"
+                   status="primary"
+                   formControlName="name"
+                   placeholder="Nombre">
+            <!--            <nb-icon nbPrefix icon="car-outline" pack="eva"></nb-icon>-->
+            <app-messages-error [control]="form.get('fullName.name')"></app-messages-error>
+          </nb-form-field>
+          <nb-form-field>
+            <label for="name" class="label">Apellido</label>
+            <input type="text"
+                   nbInput
+                   fullWidth
+                   status="primary"
+                   formControlName="last"
+                   placeholder="Apellido">
+            <app-messages-error [control]="form.get('fullName.last')"></app-messages-error>
+
+          </nb-form-field>
+        </div>
+        <nb-form-field>
+          <label for="name" class="label">Email</label>
+          <input type="email"
+                 nbInput
+                 fullWidth
+                 status="primary"
+                 formControlName="email"
+                 placeholder="Email">
+          <app-messages-error [control]="form.get('email')"></app-messages-error>
+
+        </nb-form-field>
+        <nb-form-field>
+          <label for="nombre" class="label">Nombre</label>
+          <input type="text"
+                 nbInput
+                 id="nombre"
+                 fullWidth
+                 status="primary"
+                 formControlName="nombre"
+                 placeholder="nombre">
+          <app-messages-error [control]="form.get('nombre')"></app-messages-error>
+
+        </nb-form-field>
+        <div class="d-flex py-2 justify-content-end">
+          <button
+            nbButton
+            hero
+            [disabled]="form.invalid"
+            size="small"
+            type="submit"
+            shape="round"
+            status="primary">
+            Enviar datos
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+  </nb-card-body>
+  <nb-card-footer></nb-card-footer>
+</nb-card>

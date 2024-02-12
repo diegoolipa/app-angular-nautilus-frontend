@@ -1,0 +1,165 @@
+<nb-card>
+  <nb-card-header>Formulario basico 2 formControl</nb-card-header>
+  <nb-card-body>
+    <div>
+      nombre: {{nameField.value}}, Valid: {{nameField.valid}}
+      <input type="text"
+             [class.is-valid]="isNameFieldValid"
+             [class.is-invalid]="isNameFieldInValid"
+             nbInput
+             fullWidth
+             status="primary"
+             [formControl]="nameField"
+             placeholder="Primary">
+    </div>
+
+    <div class="messages" [class.active]="isNameFieldInValid">
+      <div *ngIf="nameField.touched && nameField.hasError('required')">
+        <span style="color: red; font-size: 10px"><strong>Este campo es requerido</strong></span>
+      </div>
+      <div *ngIf="nameField.touched && nameField.hasError('maxlength')">
+        <span style="color: red; font-size: 10px"><strong>Maximo 10  caracteres</strong></span>
+      </div>
+    </div>
+
+
+    <button
+      nbButton
+      hero
+      [disabled]="nameField.invalid"
+      size="small"
+      shape="round"
+      (click)="getNameValue()"
+      status="primary">
+      Get Value
+    </button>
+
+
+    <div>
+      email: {{emailField.value}}
+      <input type="email"
+             nbInput
+             fullWidth
+             status="primary"
+             [formControl]="emailField"
+             placeholder="email">
+    </div>
+
+    <div>
+      telefono: {{telField.value}}
+      <input type="tel"
+             nbInput
+             fullWidth
+             status="primary"
+             [formControl]="telField"
+             placeholder="telefono">
+    </div>
+
+    <div>
+      Color: {{colorField.value}}
+      <input type="color"
+             nbInput
+             fullWidth
+             status="primary"
+             [formControl]="colorField"
+             placeholder="Color">
+    </div>
+
+
+    <div>
+      Date: {{dateField.value}}
+      <input type="date"
+             nbInput
+             fullWidth
+             status="primary"
+             [formControl]="dateField"
+             placeholder="Color">
+    </div>
+
+
+    <div>
+      Numero: {{numberField.value}}
+      <input type="number"
+             nbInput
+             fullWidth
+             status="primary"
+             [formControl]="numberField"
+             placeholder="Color">
+    </div>
+
+    <div>
+      Rango: {{rangeField.value}}
+      <input type="range"
+             nbInput
+             fullWidth
+             status="primary"
+             [formControl]="rangeField"
+             placeholder="Color">
+    </div>
+    <div>
+      Hora: {{timeField.value}}
+      <input type="time"
+             nbInput
+             fullWidth
+             status="primary"
+             [formControl]="timeField"
+             placeholder="Color">
+    </div>
+
+    <div>
+      Text: {{textField.value}}
+      <textarea type="text"
+                nbInput
+                fullWidth
+                status="primary"
+                [formControl]="textField"
+                placeholder="Color"> </textarea>
+    </div>
+
+    <div>
+      Categoria: {{categoryField.value}} <br>
+      <nb-select placeholder="Categoria" [formControl]="categoryField">
+        <nb-option value="1">Option 1</nb-option>
+        <nb-option value="2">Option 2</nb-option>
+        <nb-option value="3">Option 3</nb-option>
+      </nb-select>
+    </div>
+
+    <div>
+      Tags: {{tagsField.value}} <br>
+      <nb-select multiple placeholder="Multiple Select" [formControl]="tagsField">
+        <nb-option value="1">Option 1</nb-option>
+        <nb-option value="2">Option 2</nb-option>
+        <nb-option value="3">Option 3</nb-option>
+        <nb-option value="4">Option 4</nb-option>
+      </nb-select>
+    </div>
+
+
+    <div>
+      Agree: {{agreeField.value}} <br>
+      <nb-checkbox status="basic" [formControl]="agreeField">Basic</nb-checkbox>
+    </div>
+
+    <div>
+      Sexo: {{genderField.value}} <br>
+      <nb-radio-group [formControl]="genderField" name="reactive-forms-gender">
+        <nb-radio value="1">Option 1</nb-radio>
+        <nb-radio value="2">Option 2</nb-radio>
+        <nb-radio value="3">Option 3</nb-radio>
+      </nb-radio-group>
+    </div>
+
+    <div>
+      Zone: {{zoneField.value}} <br>
+      <nb-radio-group [formControl]="zoneField" name="reactive-forms-zone">
+        <nb-radio value="1">Zone 1</nb-radio>
+        <nb-radio value="2">Zone 2</nb-radio>
+        <nb-radio value="3">Zone 3</nb-radio>
+      </nb-radio-group>
+    </div>
+
+
+  </nb-card-body>
+  <nb-card-footer></nb-card-footer>
+</nb-card>

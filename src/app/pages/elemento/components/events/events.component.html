@@ -1,0 +1,74 @@
+<nb-card class="card-frame card-border">
+  <nb-card-body>
+    <p>events works!</p>
+    <h1>onSelectChange</h1>
+
+    <p>para angular nativo (change)</p>
+    <select (change)="onSelectChange($event)">
+      <option value="opcion1">Opción 1</option>
+      <option value="opcion2">Opción 2</option>
+      <option value="opcion3">Opción 3</option>
+    </select>
+
+    <p>{{value}}</p>
+    <hr>
+
+    <p>Para Nebular (selectedChange) </p>
+    <nb-select placeholder="Primary" status="primary" (selectedChange)="onSelectChangetwo($event)">
+      <nb-option value="1">Option 1</nb-option>
+      <nb-option value="2">Option 2</nb-option>
+      <nb-option value="3">Option 3</nb-option>
+      <nb-option value="4">Option 4</nb-option>
+    </nb-select>
+    <p>{{value3}}</p>
+    <hr>
+
+    <input type="text" (change)="onInputChange($event)">
+    <p>{{value2}}</p>
+
+    <hr>
+    <h1>Click (click)</h1>
+    <button nbButton shape="semi-round" status="primary" (click)="click()">Click</button>
+    <button nbButton shape="semi-round" status="primary" (dblclick)="click()">Doble Click</button>
+    <p>Contador: {{contador}}</p>
+
+
+    <hr>
+    <h1>(change)</h1>
+    <label class="label label-large">Change para un text</label>
+    <input type="text" nbInput fullWidth status="primary" placeholder="Primary" (change)="onInputChange($event)">
+    <p></p>
+    <label class="label">Change para un number</label>
+    <input type="number" nbInput fullWidth status="primary" placeholder="Primary" (change)="onInputChange($event)">
+    <p></p>
+
+    <nb-form-field fullWidth>
+      <label class="label label-small">Etiqueta Pequeña</label>
+      <input type="number" nbInput status="primary" placeholder="Ingresa el valor" (change)="onInputChange($event)">
+    </nb-form-field>
+    <p></p>
+
+    <nb-form-field>
+      <nb-icon nbPrefix icon="attach-2-outline" pack="eva"></nb-icon>
+      <input type="number" nbInput fullWidth status="primary" placeholder="Primary" (change)="onInputChange($event)">
+    </nb-form-field>
+    <p></p>
+    <nb-form-field fullWidth>
+      <label class="label label-success">Etiqueta de Información</label>
+      <input type="number" nbInput status="primary" placeholder="Ingresa el valor" (change)="onInputChange($event)">
+
+      <label class="label label-small">Etiqueta Pequeña</label>
+      <input type="number" nbInput status="primary" placeholder="Ingresa el valor" (change)="onInputChange($event)">
+    </nb-form-field>
+    <p></p>
+
+    <hr>
+    <h1>(keydown)</h1>
+    <input type="text" nbInput fullWidth status="primary" [value]="persona.name" placeholder="Primary"
+           (keydown)="onInputKeydown($event)">
+<p></p>
+    <input type="text" nbInput fullWidth status="primary" [value]="persona.name" placeholder="Primary"
+           (keydown.shift.t)="onInputKeydown($event)">
+    <p>{{value4}}</p>
+  </nb-card-body>
+</nb-card>

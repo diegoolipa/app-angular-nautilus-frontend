@@ -1,0 +1,64 @@
+<nb-card class="card-frame card-border">
+  <nb-card-body>
+    <h1>Iteracion *ngFor</h1>
+
+    <div *ngFor="let campo of campos">
+      <h6>{{ campo.nombre }}</h6>
+      <p>{{ campo.descripcion }}</p>
+    </div>
+
+
+    <hr>
+
+    <p>String Interpolations</p>
+    <h2>{{welcome}}</h2>
+
+    <p>
+      {{ 'hola'.repeat(3)}}
+    </p>
+    <hr>
+
+    <p>la suma de 3 + 3 es {{ 3+3 }}</p>
+    <hr>
+
+    <nb-toggle [(checked)]="disabled"></nb-toggle>
+    <br>
+    <img src="" alt="">
+    <input type="text" [value]="name" >
+    <button [disabled]="disabled" >Clik</button>
+    <p>{{disabled}}</p>
+
+
+
+    <button nbButton shape="semi-round" status="primary" [disabled]="disabled" >Button</button>
+
+
+    <hr>
+    <h1>Interpolación</h1>
+    <p>{{'{{'}} Aqui tu codigo{{'}}'}}</p>
+
+
+    <h1>Propertu Binding</h1>
+    <p>{{'['}} src {{']'}}</p>
+    <p>{{'['}} value {{']'}}</p>
+    <p>{{'['}} disable {{']'}}</p>
+
+    <p>datos primitivos</p>
+    <img [src]="img" alt="">
+
+    <p>Objetos</p>
+    <img [src]="persona.img" alt="">
+
+    <hr>
+
+    <h1>Objeto</h1>
+    <p> Persona {{persona.name}} </p>
+    <p> Persona {{persona.age}} </p>
+
+
+
+
+
+
+  </nb-card-body>
+</nb-card>

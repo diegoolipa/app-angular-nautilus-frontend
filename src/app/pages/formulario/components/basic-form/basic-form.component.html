@@ -1,0 +1,35 @@
+<nb-card>
+  <nb-card-header>Formulario basico</nb-card-header>
+  <nb-card-body>
+    <div>
+      {{nameField.value}}
+      <input type="text"
+             nbInput
+             fullWidth
+             status="primary"
+             [formControl]="nameField"
+             placeholder="Primary">
+<!--      <code>-->
+<!--      <pre>-->
+<!--              {{nameField| json}}-->
+<!--      </pre>-->
+<!--      </code>-->
+    </div>
+
+    <div class="p-2">
+      <button
+        nbButton
+        hero
+        size="small"
+        shape="round"
+        (click)="getNameValue()"
+        status="primary">
+        Get Value
+      </button>
+    </div>
+
+
+
+  </nb-card-body>
+  <nb-card-footer></nb-card-footer>
+</nb-card>

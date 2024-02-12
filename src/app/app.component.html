@@ -1,0 +1,36 @@
+<!--<nb-layout>-->
+
+<!--  <nb-layout-header fixed>-->
+<!--  &lt;!&ndash; Insert header here &ndash;&gt;-->
+<!--  </nb-layout-header>-->
+
+<!--  <nb-layout-column>-->
+<!--    <div> Diego </div>-->
+<!--    <router-outlet></router-outlet>-->
+<!--  </nb-layout-column>-->
+
+
+<!--</nb-layout>-->
+<nb-layout>
+
+  <nb-layout-header fixed >
+    <a href="#" (click)="toggle()" ><i class="nb-menu">
+      <nb-icon icon="menu-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>    </i></a>
+  </nb-layout-header>
+
+  <nb-sidebar>
+    <nb-card class="" style="border: none;">
+      <nb-menu [items]="items" autoCollapse="true">
+      </nb-menu>
+    </nb-card>
+  </nb-sidebar>
+
+  <nb-layout-column class="colored-column-basic p-2 ">
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+
+<!--  <nb-layout-footer fixed>-->
+<!--    &lt;!&ndash; Insert footer here &ndash;&gt;-->
+<!--  </nb-layout-footer>-->
+</nb-layout>
